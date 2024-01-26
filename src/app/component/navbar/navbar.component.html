@@ -1,0 +1,17 @@
+<div class="container-flex">
+    <mat-toolbar class="bg-dark">
+        <div class="col-md-2">
+            <button class=" btn btn-lg text-white border-white"routerLink="/home" >E.S.D.S</button>
+        </div>
+        <div class="col-md-1">
+            <button mat-button [matMenuTriggerFor]="productMenu" class="text-white">Clientes</button>
+            <mat-menu #productMenu yPosition="above">
+                <button mat-menu-item routerLink="/customer-new">Ver</button>
+                <button mat-menu-item routerLink="/customer-new">Nuevo</button>
+               
+                </mat-menu>
+        </div>
+      
+    </mat-toolbar>
+  
+</div>
