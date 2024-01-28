@@ -83,7 +83,7 @@ createCustomer():void{
     console.log(this.customer.address)
     this.customerService.createCustomer(this.customer).subscribe({
       next:(customerData)=>{
-        this.snackBarService.openSnackBar('Cliente guardado' + customerData.name,'Cerrar',4000);
+        this.snackBarService.openSnackBar('Cliente guardado' + ' ' + customerData.name ,'Cerrar',4000);
       },
       error:(errorData)=>{
         this.snackBarService.openSnackBar(errorData,'Cerrar',3000);

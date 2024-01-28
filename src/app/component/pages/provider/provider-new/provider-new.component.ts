@@ -78,6 +78,9 @@ addressCompleteSelected!:string;
     
     this.provider = new Provider();
     this.provider = Object.assign(this.provider,this.providerFormBuilder.value);
+    this.provider.address = Object.assign(this.addressFormBuilder.value);
+    this.provider.address.gMapsFullname = this.addressCompleteSelected;
+   
     this.providerService.createProvider(this.provider).subscribe({
         next:(providerData)=>{
           this.snackBarService.openSnackBar('Cliente guardado' ,'Cerrar',4000);

@@ -20,6 +20,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { HomeComponent } from './component/pages/home/home.component';
 import { DialogTemplateComponent } from './component/dialog_template/dialog-template/dialog-template.component';
 import { ProviderNewComponent } from './component/pages/provider/provider-new/provider-new.component';
+import { SupplyNewComponent } from './component/pages/supply/supply/supply-new.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProviderNewComponent } from './component/pages/provider/provider-new/pr
     NavbarComponent,
     HomeComponent,
     DialogTemplateComponent,
-    ProviderNewComponent
+    ProviderNewComponent,
+    SupplyNewComponent
   ],
   imports: [
     BrowserModule,

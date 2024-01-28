@@ -1,14 +1,14 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { Provider } from '../model/provider';
+import { Supply } from '../model/supply';
 
-const PROVIDER_BASE_URL = 'http://localhost:8090/api/provider'
+const SUPPLY_BASE_URL = 'http://localhost:8090/api/supply'
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProviderService {
+export class SupplyService {
 
   constructor(private http:HttpClient) { }
 
@@ -23,12 +23,11 @@ export class ProviderService {
    return throwError(()=> new Error(error.error));
   }
 
-  createProvider(provider:Provider):Observable<Provider>{
-    return this.http.post<Provider>(`${PROVIDER_BASE_URL}/new`,provider,this.httpOptions).pipe(catchError(this.handleError));
+  createSupply(supply:Supply):Observable<string>{
+    return this.http.post<string>(`${SUPPLY_BASE_URL}/create`,supply,this.httpOptions).pipe(catchError(this.handleError));
   }
 
-  getAllProviders():Observable<Provider[]>{
-    return this.http.get<Provider[]>(`${PROVIDER_BASE_URL}/all`,this.httpOptions).pipe(catchError(this.handleError));
+  getAllSupplies():Observable<Supply[]>{
+    return this.http.get<Supply[]>(`${SUPPLY_BASE_URL}/all`,this.httpOptions).pipe(catchError(this.handleError));
   }
-
 }

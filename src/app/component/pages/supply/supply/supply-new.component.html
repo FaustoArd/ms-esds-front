@@ -1,0 +1,68 @@
+app-navbar></app-navbar>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4">
+                
+                    <form [formGroup]="supplyFormBuilder">
+                       
+                            <div class="form-group">
+                                <label for="type" class=" form-label ">Tipo de material</label>
+                                <small class="text-danger ms-3">(Obligatorio)</small>
+                                <input class="form-control border-dark" type="text" formControlName="type" id="type">
+                                <div *ngIf="type.invalid && (type.dirty || type.touched)" class="text-danger">
+                                    <div *ngIf="type.errors?.['required']">
+                                        Falta el tipo...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="brand" class=" form-label ">Marca</label>
+                                <small class="text-danger ms-3">(Obligatorio)</small>
+                                <input class="form-control border-dark" type="text" formControlName="brand" id="brand">
+                                <div *ngIf="brand.invalid && (brand.dirty || brand.touched)" class="text-danger">
+                                    <div *ngIf="brand.errors?.['required']">
+                                        Falta la marca...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="description
+                                " class=" form-label ">Descripcion</label>
+                                <small class="text-danger ms-3">(Obligatorio)</small>
+                                <input class="form-control border-dark" type="type" formControlName="description
+                                " id="description
+                                ">
+                               
+                            </div>
+                            <div class="form-group">
+                                <label for="cuit" class=" form-label">Proveedor</label>
+                              
+                              
+                                </div>
+                           
+                            <div class="form-group">
+                                <label for="price" class=" form-label">Precio</label>
+                                <small class="text-danger ms-3">(Obligatorio)</small>
+                                <input class="form-control border-dark" type="number" formControlName="price" id="price">
+                                <div *ngIf="price.invalid && (price.dirty || price.touched)" class="text-danger">
+                                    <div *ngIf="price.errors?.['required']">
+                                        Falta el precio...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" (click)="createSupply()"
+                                class="btn btn-success border border-dark mt-1 mb-2">Guardar</button>
+                            </div>
+                        </form>
+                      
+                           
+                     
+                  
+             </div>
+             <div class="col-2"></div>
+        </div>
+    </div>
+    </body>
