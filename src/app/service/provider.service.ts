@@ -1,14 +1,14 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { Customer } from '../model/customer';
+import { Provider } from '../model/provider';
 
-const CUSTOMER_BASE_URL = 'http://localhost:8090/api/customer'
+const PROVIDER_BASE_URL = 'http://localhost:8090/api/provider'
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerService {
+export class ProviderService {
 
   constructor(private http:HttpClient) { }
 
@@ -23,7 +23,8 @@ export class CustomerService {
    return throwError(()=> new Error(error.error));
   }
 
-  createCustomer(customer:Customer):Observable<Customer>{
-    return this.http.post<Customer>(`${CUSTOMER_BASE_URL}/new`,customer,this.httpOptions).pipe(catchError(this.handleError));
+  createProvider(provider:Provider):Observable<Provider>{
+    return this.http.post<Provider>(`${PROVIDER_BASE_URL}/new`,provider,this.httpOptions).pipe(catchError(this.handleError));
   }
+
 }

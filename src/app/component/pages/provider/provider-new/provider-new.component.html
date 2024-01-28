@@ -5,14 +5,14 @@
             <div class="col-2"></div>
             <div class="col-4">
                 
-                    <form class="" [formGroup]="customerFormBuilder">
+                    <form [formGroup]="providerFormBuilder">
                        
-                            <div class="form-group ">
+                            <div class="form-group">
                                 <label for="name" class=" form-label ">Nombre</label>
                                 <small class="text-danger ms-3">(Obligatorio)</small>
-                                <input class="form-control border-dark" type="name" formControlName="name" id="name">
-                                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
-                                    <div *ngIf="name.errors?.['required']">
+                                <input class="form-control border-dark" type="text" formControlName="socialName" id="socialName">
+                                <div *ngIf="socialName.invalid && (socialName.dirty || socialName.touched)" class="text-danger">
+                                    <div *ngIf="socialName.errors?.['required']">
                                         Falta el nombre...
                                     </div>
                                 </div>
@@ -20,10 +20,10 @@
                             <div class="form-group">
                                 <label for="socialName" class=" form-label ">Razon social</label>
                                 <small class="text-danger ms-3">(Obligatorio)</small>
-                                <input class="form-control border-dark" type="socialName" formControlName="socialName" id="socialName">
-                                <div *ngIf="socialName.invalid && (socialName.dirty || socialName.touched)" class="text-danger">
-                                    <div *ngIf="socialName.errors?.['required']">
-                                        Falta el socialName...
+                                <input class="form-control border-dark" type="text" formControlName="fantasyName" id="fantasyName">
+                                <div *ngIf="fantasyName.invalid && (fantasyName.dirty || fantasyName.touched)" class="text-danger">
+                                    <div *ngIf="fantasyName.errors?.['required']">
+                                        Falta el nomber de fantasia...
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 <input class="form-control border-dark" type="street" formControlName="street" id="street">
                                 <div *ngIf="street.invalid && (street.dirty || street.touched)" class="text-danger">
                                     <div *ngIf="street.errors?.['required']">
-                                        Falta el street...
+                                        Falta la calle...
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                 <input class="form-control border-dark" type="houseNumber" formControlName="houseNumber" id="houseNumber">
                                 <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)" class="text-danger">
                                     <div *ngIf="houseNumber.errors?.['required']">
-                                        Falta el houseNumber...
+                                        Falta el numero de calle...
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                                 <label for="gMapsFullname" class=" form-label fs-7 fw-bold">{{this.addressCompleteSelected}}</label>
                             </div>
                            <div class="text-center">
-                            <button type="submit" (click)="createCustomer()"
+                            <button type="submit" (click)="createprovider()"
                             class="btn btn-success border border-dark mt-1 mb-2">Guardar</button>
                         </div>
                      
@@ -114,3 +114,4 @@
 
     </ng-template>
 </body>
+

@@ -18,13 +18,17 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { HomeComponent } from './component/pages/home/home.component';
+import { DialogTemplateComponent } from './component/dialog_template/dialog-template/dialog-template.component';
+import { ProviderNewComponent } from './component/pages/provider/provider-new/provider-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerNewComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    DialogTemplateComponent,
+    ProviderNewComponent
   ],
   imports: [
     BrowserModule,

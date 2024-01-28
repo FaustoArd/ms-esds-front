@@ -4,10 +4,18 @@
             <button class=" btn btn-lg text-white border-white"routerLink="/home" >E.S.D.S</button>
         </div>
         <div class="col-md-1">
-            <button mat-button [matMenuTriggerFor]="productMenu" class="text-white">Clientes</button>
-            <mat-menu #productMenu yPosition="above">
+            <button mat-button [matMenuTriggerFor]="customerMenu" class="text-white">Clientes</button>
+            <mat-menu #customerMenu yPosition="above">
                 <button mat-menu-item routerLink="/customer-new">Ver</button>
                 <button mat-menu-item routerLink="/customer-new">Nuevo</button>
+               
+                </mat-menu>
+        </div>
+        <div class="col-md-1">
+            <button mat-button [matMenuTriggerFor]="providerMenu" class="text-white">Proveedores</button>
+            <mat-menu #providerMenu yPosition="above">
+                <button mat-menu-item routerLink="/provider-new">Ver</button>
+                <button mat-menu-item routerLink="/provider-new">Nuevo</button>
                
                 </mat-menu>
         </div>

@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { AddressCompleteResultResponse } from '../model/addressCompleteResultResponse';
 
-const ADDRESS_BASE_URL = 'http://localhost:8090/address-service/api/address';
+const ADDRESS_BASE_URL = 'http://localhost:8090/api/address';
+
+const DISTANCE_BASE_URL = 'http://localhost:8090/api/distance';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +29,8 @@ export class AddressService {
     return this.http.get<AddressCompleteResultResponse[]>(`${ADDRESS_BASE_URL}/search?address=${address}`,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
+
+  
 
 
 }
