@@ -8,7 +8,7 @@
                     <form [formGroup]="providerFormBuilder">
                        
                             <div class="form-group">
-                                <label for="name" class=" form-label ">Nombre</label>
+                                <label for="name" class=" form-label ">Razon social</label>
                                 <small class="text-danger ms-3">(Obligatorio)</small>
                                 <input class="form-control border-dark" type="text" formControlName="socialName" id="socialName">
                                 <div *ngIf="socialName.invalid && (socialName.dirty || socialName.touched)" class="text-danger">
@@ -18,7 +18,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="socialName" class=" form-label ">Razon social</label>
+                                <label for="socialName" class=" form-label ">Nombre de fantasia</label>
                                 <small class="text-danger ms-3">(Obligatorio)</small>
                                 <input class="form-control border-dark" type="text" formControlName="fantasyName" id="fantasyName">
                                 <div *ngIf="fantasyName.invalid && (fantasyName.dirty || fantasyName.touched)" class="text-danger">

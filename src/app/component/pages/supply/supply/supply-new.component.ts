@@ -19,6 +19,7 @@ export class SupplyNewComponent implements OnInit {
   supply!:Supply;
   supplies:Supply[]= [];
   providers:Provider[] = [];
+  providerNameResult!:string;
 
   ngOnInit(): void {
       this.getAllProviders();
@@ -28,14 +29,17 @@ export class SupplyNewComponent implements OnInit {
     type:['', Validators.required],
     brand:['',Validators.required],
     description:['', Validators.required],
-    providerId:[0],
-    providerName:['', Validators.required],
+    providerId:[],
+    
     price:[0,Validators.required]
   });
 
   createSupply(){
-    this.supply = new Supply();
+   this.supply = new Supply();
     this.supply = Object.assign(this.supply,this.supplyFormBuilder.value);
+    this.providers.filter(p => p.id==this.supply.providerId).map(p => this.providerNameResult= p.socialName);
+    this.supply.providerName = this.providerNameResult;
+    console.log(this.supply)
     this.supplyService.createSupply(this.supply).subscribe({
       next:(supplyMessage)=>{
         this.snackBarService.openSnackBar('Se creo el material: ' + supplyMessage + ' ','Cerrar',3000);
@@ -78,10 +82,12 @@ export class SupplyNewComponent implements OnInit {
   get description(){
     return this.supplyFormBuilder.controls.description;
   }
-  get providerName(){
-    return this.supplyFormBuilder.controls.providerName;
-  }
+ 
   get price(){
     return this.supplyFormBuilder.controls.price;
   }
+  get providerId(){
+    return this.supplyFormBuilder.controls.providerId;
+  }
+ 
 }

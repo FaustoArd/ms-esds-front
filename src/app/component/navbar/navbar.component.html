@@ -19,7 +19,14 @@
                
                 </mat-menu>
         </div>
-      
+        <div class="col-md-1">
+            <button mat-button [matMenuTriggerFor]="supplyMenu" class="text-white">Materiales</button>
+            <mat-menu #supplyMenu yPosition="above">
+                <button mat-menu-item routerLink="/supply-new">Ver</button>
+               
+               
+                </mat-menu>
+        </div>
     </mat-toolbar>
   
 </div>

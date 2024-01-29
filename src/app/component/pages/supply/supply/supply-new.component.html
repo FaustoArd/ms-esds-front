@@ -31,16 +31,25 @@
                                 <label for="description
                                 " class=" form-label ">Descripcion</label>
                                 <small class="text-danger ms-3">(Obligatorio)</small>
-                                <input class="form-control border-dark" type="type" formControlName="description
-                                " id="description
-                                ">
+                                <input class="form-control border-dark" type="type" formControlName="description" id="description">
                                
                             </div>
                             <div class="form-group">
-                                <label for="cuit" class=" form-label">Proveedor</label>
-                              
-                              
-                                </div>
+                                <label>Seleccione una categoria</label>
+                            <select id="providerId"  formControlName="providerId" class="form-select border-dark mt-1">
+                               <option class="form-control" *ngFor="let provider of providers" id="providerId" [value]="provider.id">
+                                    {{provider.socialName}}</option>
+                                    <div *ngIf="providerId.invalid && (providerId.dirty || providerId.touched)" class="text-danger">
+                                        <div *ngIf="providerId.errors?.['required']">
+                                       Debes seleccionar una categoria
+                                        </div>
+                                      
+                                       <div  class="mt-1" *ngIf="providerId.errors?.['errors']">
+                                        password must be at least 6 characters long.
+                                      </div>
+                                    </div>
+                            </select>
+                        </div>
                            
                             <div class="form-group">
                                 <label for="price" class=" form-label">Precio</label>
