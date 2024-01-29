@@ -1,1 +1,191 @@
-<p>employee-new works!</p>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <div *ngIf="jobRoles.length===0">
+                <h1>Todavia no creatse ningun rol</h1>
+                </div>
+                <div *ngIf="jobRoles.length">
+                <h2>Roles</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Hora extra al 50%</th>
+                            <th scope="col">Hora extra al 100%</th>
+                            <th scope="col">Premio</th>
+                            <th scope="col">Vacaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let jobrole of jobRoles">
+                            <td>{{jobRole.role}}</td>
+                            <td>{{jobRole.payHour}}</td>
+                            <td>{{jobRole.payExtraHour50}}</td>
+                            <td>{{jobRole.payExtraHour100}}</td>
+                            <td>{{jobRole.prize}}</td>
+                            <td>{{jobRole.holiday}}</td>
+                         </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div class="col-4">
+                <div *ngIf="employees.length===0">
+                <h1>Todavia no creaste ningun empleado</h1>
+                </div>
+                <div *ngIf="employees.length>0">
+                <h2>Empleados</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">D.N.I</th>
+                            <th scope="col">Rol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let employee of employees">
+                            <td>{{employee.name}}</td>
+                            <td>{{employee.lastname}}</td>
+                            <td>{{employee.phone}}</td>
+                            <td>{{employee.email}}</td>
+                            <td>{{employee.dni}}</td>
+                            <td>{{employee.jobRole}}</td>
+                            
+                         </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    <ng-template #jobRoleCreateTemplate>
+        <div class="row">
+            <div class="col-4">
+                <form class="" [formGroup]="jobRoleFormBuilder">
+                       
+                    <div class="form-group ">
+                        <label for="role" class=" form-label ">Rol</label>
+                        <small class="text-danger ms-3">(Obligatorio)</small>
+                        <input class="form-control border-dark" type="text" formControlName="role" id="role">
+                        <div *ngIf="role.invalid && (role.dirty || role.touched)" class="text-danger">
+                            <div *ngIf="role.errors?.['required']">
+                                Falta el rol...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="payHour" class=" form-label ">Sueldo por hora</label>
+                        <small class="text-danger ms-3">(Obligatorio)</small>
+                        <input class="form-control border-dark" type="text" formControlName="payHour" id="payHour">
+                        <div *ngIf="payHour.invalid && (payHour.dirty || payHour.touched)" class="text-danger">
+                            <div *ngIf="payHour.errors?.['required']">
+                                Falta sueldo por hora...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="payExtraHour50" class=" form-label ">Hora extra al 50%</label>
+                        <input class="form-control border-dark" type="number" formControlName="payExtraHour50" id="payExtraHour50">
+                        <div *ngIf="payExtraHour50.invalid && (payExtraHour50.dirty || payExtraHour50.touched)" class="text-danger">
+                            <div *ngIf="payExtraHour50.errors?.['required']">
+                                Falta la hora extra al 50%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="payExtraHour100" class=" form-label">Hora extra al 100%</label>
+                        <input class="form-control border-dark" type="number" formControlName="payExtraHour100" id="payExtraHour100">
+                        <div *ngIf="payExtraHour100.invalid && (payExtraHour100.dirty || payExtraHour100.touched)" class="text-danger">
+                            <div *ngIf="payExtraHour100.errors?.['required']">
+                                Falta la hora extra al 100%
+                            </div>
+                        </div>
+                        </div>
+                   
+                    <div class="form-group">
+                        <label for="prize" class=" form-label">Premio</label>
+                        <small class="text-danger ms-3">(Obligatorio)</small>
+                        <input class="form-control border-dark" type="number" formControlName="prize" id="prize">
+                        <div *ngIf="prize.invalid && (prize.dirty || prize.touched)" class="text-danger">
+                            <div *ngIf="prize.errors?.['required']">
+                                Falta el premio...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="holiday" class=" form-label  ">Vacaciones</label>
+                        <input class="form-control border-dark" type="number" formControlName="holiday" id="holiday">
+                        <div *ngIf="holiday.invalid && (holiday.dirty || holiday.touched)" class="text-danger">
+                            <div *ngIf="holiday.errors?.['required']">
+                                Faltan las vacaciones...
+                            </div>
+                        </div>
+                    </div>
+                </form>
+               
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template #employeeCreateTemplate>
+        <div class="row">
+            <div class="col-6">
+                <form [formGroup]="employeeFormBuilder">
+                       
+                    <div class="form-group">
+                        <label for="name" class=" form-label ">Tipo de material</label>
+                        <small class="text-danger ms-3">(Obligatorio)</small>
+                        <input class="form-control border-dark" type="text" formControlName="name" id="name">
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+                            <div *ngIf="name.errors?.['required']">
+                                Falta el nombre...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname" class=" form-label ">Marca</label>
+                        <small class="text-danger ms-3">(Obligatorio)</small>
+                        <input class="form-control border-dark" type="text" formControlName="lastname" id="lastname">
+                        <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="text-danger">
+                            <div *ngIf="lastname.errors?.['required']">
+                                Falta el apellido...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class=" form-label ">Descripcion</label>
+                        <small class="text-danger ms-3">(Obligatorio)</small>
+                        <input class="form-control border-dark" type="email" formControlName="email" id="email">
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                            <div *ngIf="email.errors?.['required']">
+                                Falta el mail...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Seleccione un rol de trabajo</label>
+                    <select id="jobRoleId"  formControlName="jobRoleId" class="form-select border-dark mt-1">
+                       <option class="form-control" *ngFor="let jobRole of jobRoles" id="jobRoleId" [value]="jobRole.id">
+                            {{jobRole.role}}</option>
+                            <div *ngIf="jobRoleId.invalid && (jobRoleId.dirty || jobRoleId.touched)" class="text-danger">
+                                <div *ngIf="jobRoleId.errors?.['required']">
+                               Debes seleccionar un rol
+                                </div>
+                              
+                               <div  class="mt-1" *ngIf="jobRoleId.errors?.['errors']">
+                                Debe seleccion un rol
+                              </div>
+                            </div>
+                    </select>
+                </div>
+            </form>
+            </div>
+        </div>
+    </ng-template>
+</body>
