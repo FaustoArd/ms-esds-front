@@ -1,0 +1,77 @@
+
+body{
+  background: linear-gradient(245.59deg,rgb(220, 218, 233) 60%, rgb(220, 218, 233) 30%, #d3d0e8 79%);
+  font-family: "Arbutus Slab", serif;
+}
+.form-group{
+    text-align: center;
+      margin-top: 0.5rem;
+      margin-left: 1.5rem;
+    
+    font-weight: 400;
+    font-style: normal;
+  }
+  button{
+    text-align: center;
+    border-radius: solid 1px;
+    border: solid 1px;
+      font-family: "Arbutus Slab", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  label{
+   
+  }
+
+  h2{
+    font-family: "Arbutus Slab", serif;
+  }
+
+  h3{
+    font-family: "Arbutus Slab", serif;
+  }
+
+  jumbotron{
+   
+    background-color: aliceblue;
+}
+
+.btn{
+    background: linear-gradient(245.59deg, rgb(153, 53, 53)20%, rgb(175, 80, 88) 30%, #eb2222 79%); 
+    color:red;
+}
+.btn:hover{
+    background: linear-gradient(245.59deg, rgb(200, 134, 12)20%, rgb(201, 104, 20) 30%, #d7b90d 79%); 
+    color:rgb(215, 154, 41);
+}
+
+p{
+  color:green;
+  font-size: 0.8rem;
+}
+
+small{
+  text-align: left;
+ margin-right: 0.0rem;
+  font-size: 0.6rem;
+}
+
+table{
+  width: 100%;
+  color: linear-gradient(245.59deg,rgb(220, 218, 233) 60%, rgb(220, 218, 233) 30%, #d3d0e8 79%);
+  border-radius: 1px;
+  border: 1px solid  black;
+ 
+}
+
+th{
+  background: linear-gradient(245.59deg, rgb(45, 152, 60)20%, rgb(91, 172, 94) 30%, #48c150 79%); 
+  font-size: 0.7rem;
+  border: 1px solid  black;
+}
+td{
+  text-align: center;
+  font-size: 0.8rem;
+  background: linear-gradient(245.59deg, rgb(194, 190, 182)20%, rgb(201, 194, 188) 30%, #c5c2b6 79%); 
+  border: 1px solid  black;
+}

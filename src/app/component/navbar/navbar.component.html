@@ -27,6 +27,14 @@
                
                 </mat-menu>
         </div>
+        <div class="col-md-1">
+            <button mat-button [matMenuTriggerFor]="employeeMenu" class="text-white">Empleados</button>
+            <mat-menu #employeeMenu yPosition="above">
+                <button mat-menu-item routerLink="/employee-new">Ver</button>
+               
+               
+                </mat-menu>
+        </div>
     </mat-toolbar>
   
 </div>

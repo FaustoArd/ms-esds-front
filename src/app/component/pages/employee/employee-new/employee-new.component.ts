@@ -31,11 +31,11 @@ export class EmployeeNewComponent implements OnInit {
 
     jobRoleFormBuilder = this.formBuilder.group({
       role:['', Validators.required],
-      payHour:[Validators.required],
-      payExtraHour50:[Validators.required],
-      payExtraHour100:[Validators.required],
-      prize:[Validators.required],
-      holiday:[Validators.required]
+      payHour:[0,Validators.required],
+      payExtraHour50:[0,Validators.required],
+      payExtraHour100:[0,Validators.required],
+      prize:[0,Validators.required],
+      holiday:[0,Validators.required]
     });
 
     employeeFormBuilder = this.formBuilder.group({
@@ -44,7 +44,7 @@ export class EmployeeNewComponent implements OnInit {
       phone:['', Validators.required],
       email:['', Validators.required],
       dni:['', Validators.required],
-      jobRoleId:[]
+      jobRoleId:[0]
     });
 
     private matDialoRef!: MatDialogRef<DialogTemplateComponent>
@@ -55,6 +55,7 @@ export class EmployeeNewComponent implements OnInit {
         template
       });
       this.matDialoRef.afterClosed().subscribe();
+      this.getAllJobRoles();
       
 
   }
