@@ -22,6 +22,7 @@ import { DialogTemplateComponent } from './component/dialog_template/dialog-temp
 import { ProviderNewComponent } from './component/pages/provider/provider-new/provider-new.component';
 import { SupplyNewComponent } from './component/pages/supply/supply/supply-new.component';
 import { EmployeeNewComponent } from './component/pages/employee/employee-new/employee-new.component';
+import { FortNightNewComponent } from './component/pages/fort-night/fort-night/fort-night-new.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EmployeeNewComponent } from './component/pages/employee/employee-new/em
     DialogTemplateComponent,
     ProviderNewComponent,
     SupplyNewComponent,
-    EmployeeNewComponent
+    EmployeeNewComponent,
+    FortNightNewComponent
   ],
   imports: [
     BrowserModule,
