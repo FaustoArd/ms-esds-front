@@ -6,6 +6,8 @@ import { ProviderNewComponent } from './component/pages/provider/provider-new/pr
 import { SupplyNewComponent } from './component/pages/supply/supply/supply-new.component';
 import { EmployeeNewComponent } from './component/pages/employee/employee-new/employee-new.component';
 import { FortNightNewComponent } from './component/pages/fort-night/fort-night/fort-night-new.component';
+import { FortNightCompleteComponent } from './component/pages/fort-night/fort-night-complete/fort-night-complete.component';
+import { EnterpriseNewComponent } from './component/pages/enterprise/enterprise-new/enterprise-new.component';
 
 const routes: Routes = [
   { path:'home', component:HomeComponent},
@@ -14,7 +16,10 @@ const routes: Routes = [
   { path:'provider-new', component:ProviderNewComponent},
   { path: 'supply-new', component:SupplyNewComponent },
   { path: 'employee-new', component:EmployeeNewComponent },
-  { path:'fort-night', component:FortNightNewComponent}
+  { path:'fort-night', component:FortNightNewComponent},
+  {path:'fort-night-complete',component:FortNightCompleteComponent},
+  { path:'enterprise-new', component:EnterpriseNewComponent},
+  
 ];
 
 @NgModule({

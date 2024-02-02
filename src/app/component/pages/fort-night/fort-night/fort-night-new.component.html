@@ -1,1 +1,70 @@
-<p>fort-night works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="fortNightFormBuilder">
+                       
+                <div class="form-group">
+                    <label for="employeeId" class=" form-label ">Empleado</label>
+                    <small class="text-danger ms-3">(Obligatorio)</small>
+                    <input class="form-control border-dark" type="number" formControlName="employeeId" id="employeeId">
+                    <div *ngIf="employeeId.invalid && (employeeId.dirty || employeeId.touched)" class="text-danger">
+                        <div *ngIf="employeeId.errors?.['required']">
+                            Falta el empleado...
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class=" form-label ">Fecha</label>
+                    <small class="text-danger ms-3">(Obligatorio)</small>
+                    <input class="form-control border-dark" type="date" formControlName="date" id="date">
+                    <div *ngIf="date.invalid && (date.dirty || date.touched)" class="text-danger">
+                        <div *ngIf="date.errors?.['required']">
+                            Falta la fecha
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for=" hoursQuantity" class=" form-label ">Cantidad de horas</label>
+                    <input class="form-control border-dark" type="number" formControlName=" hoursQuantity" id=" hoursQuantity">
+                    <div *ngIf="hoursQuantity.invalid && (hoursQuantity.dirty || hoursQuantity.touched)" class="text-danger">
+                        <div *ngIf="hoursQuantity.errors?.['required']">
+                            Falta la cantidad de horas
+                        </div>
+                    </div>
+                </div>
+               
+               
+                <div class="form-group">
+                    <label for="extrasQuantity50" class=" form-label">Cantidad de extras al 50%</label>
+                    <small class="text-danger ms-3">(Obligatorio)</small>
+                    <input class="form-control border-dark" type="number" formControlName="extrasQuantity50" id="extrasQuantity50">
+                    <div *ngIf="extrasQuantity50.invalid && (extrasQuantity50.dirty || extrasQuantity50.touched)" class="text-danger">
+                        <div *ngIf="extrasQuantity50.errors?.['required']">
+                            Falta la cantidad de horas extras al 50%
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="extrasQuantity100" class=" form-label  ">Cantidad de extras al 100%</label>
+                    <input class="form-control border-dark" type="number" formControlName="extrasQuantity100" id="extrasQuantity100">
+                    <div *ngIf="extrasQuantity100.invalid && (extrasQuantity100.dirty || extrasQuantity100.touched)" class="text-danger">
+                        <div *ngIf="extrasQuantity100.errors?.['required']">
+                            Falta la cantidad de horas extras al 100%
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fortNightDateText" class=" form-label  ">Fecha escrita</label>
+                    <input class="form-control border-dark" type="phone" formControlName="fortNightDateText" id="fortNightDateText">
+                    <div *ngIf="fortNightDateText.invalid && (fortNightDateText.dirty || fortNightDateText.touched)" class="text-danger">
+                        <div *ngIf="fortNightDateText.errors?.['required']">
+                            Falta la fecha escrita
+                        </div>
+                    </div>
+                    <button (click)="createFortNight()" class="btn">Crear</button>
+                </div>
+            </form>
+           
+        </div>
+    </div>
+</div>

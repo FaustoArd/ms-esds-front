@@ -23,6 +23,8 @@ import { ProviderNewComponent } from './component/pages/provider/provider-new/pr
 import { SupplyNewComponent } from './component/pages/supply/supply/supply-new.component';
 import { EmployeeNewComponent } from './component/pages/employee/employee-new/employee-new.component';
 import { FortNightNewComponent } from './component/pages/fort-night/fort-night/fort-night-new.component';
+import { FortNightCompleteComponent } from './component/pages/fort-night/fort-night-complete/fort-night-complete.component';
+import { EnterpriseNewComponent } from './component/pages/enterprise/enterprise-new/enterprise-new.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { FortNightNewComponent } from './component/pages/fort-night/fort-night/f
     ProviderNewComponent,
     SupplyNewComponent,
     EmployeeNewComponent,
-    FortNightNewComponent
+    FortNightNewComponent,
+    FortNightCompleteComponent,
+    EnterpriseNewComponent
   ],
   imports: [
     BrowserModule,

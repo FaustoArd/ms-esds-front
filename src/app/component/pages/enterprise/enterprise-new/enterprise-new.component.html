@@ -1,0 +1,121 @@
+<app-navbar></app-navbar>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4">
+                 <form class="" [formGroup]="enterpriseFormBuilder">
+                       
+                            <div class="form-group ">
+                                <label for="socialName" class=" form-label ">Razon social</label>
+                                <small class="text-danger ms-3">(Obligatorio)</small>
+                                <input class="form-control border-dark" type="text" formControlName="socialName" id="socialName">
+                                <div *ngIf="socialName.invalid && (socialName.dirty || socialName.touched)" class="text-danger">
+                                    <div *ngIf="socialName.errors?.['required']">
+                                        Falta la razon social...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="fantasyName" class=" form-label ">Nombre de fantasia</label>
+                                <small class="text-danger ms-3">(Obligatorio)</small>
+                                <input class="form-control border-dark" type="text" formControlName="fantasyName" id="fantasyName">
+                                <div *ngIf="fantasyName.invalid && (fantasyName.dirty || fantasyName.touched)" class="text-danger">
+                                    <div *ngIf="fantasyName.errors?.['required']">
+                                        Falta el nombre de fantasia...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="responsible" class=" form-label ">Responsable</label>
+                                <input class="form-control border-dark" type="text" formControlName="responsible" id="responsible">
+                               
+                            </div>
+                            <div class="form-group">
+                                <label for="cuit" class=" form-label">cuit</label>
+                                <input class="form-control border-dark" type="text" formControlName="cuit" id="cuit">
+                              
+                                </div>
+                                <div class="form-group">
+                                    <label for="cuil" class=" form-label">cuil</label>
+                                    <input class="form-control border-dark" type="text" formControlName="cuil" id="cuil">
+                                  
+                                    </div>
+                           
+                            <div class="form-group">
+                                <label for="email" class=" form-label">Email</label>
+                                <small class="text-danger ms-3">(Obligatorio)</small>
+                                <input class="form-control border-dark" type="email" formControlName="email" id="email">
+                                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                                    <div *ngIf="email.errors?.['required']">
+                                        Falta el cuit...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class=" form-label  ">Telefono</label>
+                                <input class="form-control border-dark" type="text" formControlName="phone" id="phone">
+                               
+                            </div>
+                        </form>
+                        <form [formGroup]="addressFormBuilder">
+                            <div class="form-group">
+                                <label for="street" class=" form-label  ">Calle</label>
+                                <small class="text-danger ms-3">(Obligatorio)</small>
+                                <input class="form-control border-dark" type="text" formControlName="street" id="street">
+                                <div *ngIf="street.invalid && (street.dirty || street.touched)" class="text-danger">
+                                    <div *ngIf="street.errors?.['required']">
+                                        Falta el street...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="houseNumber" class=" form-label">Numero de calle</label>
+                                <small class="text-danger ms-3">(Obligatorio)</small>
+                                <input class="form-control border-dark" type="text" formControlName="houseNumber" id="houseNumber">
+                                <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)" class="text-danger">
+                                    <div *ngIf="houseNumber.errors?.['required']">
+                                        Falta el houseNumber...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-inline">
+                            <button type="submit" (click)="openDialogAddressComplete(showFullAddressesTemplate)"
+                            class="btn btn-sm btn-danger border border-dark mt-1 mb-2">Validar direccion</button>
+                        </div>
+                            <div class="d-inline btn-success bg-transparent mt-2 ms-5">
+                                <label for="gMapsFullname" class=" form-label fs-7 fw-bold">{{this.addressCompleteSelected}}</label>
+                            </div>
+                           <div class="text-center">
+                            <button type="submit" (click)="createEnterprise()"
+                            class="btn btn-success border border-dark mt-1 mb-2">Guardar</button>
+                        </div>
+                     
+                    </form>
+             </div>
+             <div class="col-2"></div>
+        </div>
+    </div>
+    <ng-template #showFullAddressesTemplate>  <table class="table table-fluid table-hover table-bordered table-striped border border-dark">
+        <thead>
+            <tr class="bg-primary opacity-50 text-center">
+                <th scope="col">Direccion completa</th>
+                <th scope="col">Seleccionar</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let address of addressCompleteResultResponse">
+                <th scope="row" class="fw-bold">{{address.addressResults}}</th>
+              
+                <th>
+                    <button (click)="selectFullAddress(address.addressResults)" class="btn btn-success btn-sm text-white">-</button>
+                   
+                </th>
+            </tr>
+        </tbody>
+    </table>
+
+    </ng-template>
+</body>
+

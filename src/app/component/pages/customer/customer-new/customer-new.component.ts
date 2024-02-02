@@ -88,7 +88,7 @@ createCustomer():void{
       error:(errorData)=>{
         this.snackBarService.openSnackBar(errorData,'Cerrar',3000);
       }
-    })
+    });
   
 }
 
